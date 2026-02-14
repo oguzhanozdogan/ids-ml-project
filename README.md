@@ -23,23 +23,23 @@ Raw CSV files are stored locally and are not included in the repository.
 
 ## Project Structure
 
+```
 ids-ml-project/
 │
 ├── data/
-│ ├── raw/ # Original dataset (local only)
-│ └── processed/ # Cleaned merged dataset (local only)
+│   ├── raw/            # Original dataset (local only)
+│   └── processed/      # Cleaned merged dataset (local only)
 │
-├── models/ # Trained models
-├── src/ # Source code
-│ ├── merge_data.py
-│ └── train.py
+├── models/             # Trained models
 │
-├── app.py # Streamlit demo (optional)
+├── src/                # Source code
+│   ├── merge_data.py
+│   └── train.py
+│
+├── app.py              # Streamlit demo (optional)
 ├── requirements.txt
 └── README.md
-
-
----
+```
 
 ## Methodology
 
@@ -139,22 +139,16 @@ These results reflect realistic generalization performance under temporal distri
 
 ```bash
 pip install -r requirements.txt
+```
+
 ### 2. Merge Dataset
+
+```bash
 python src/merge_data.py
+```
+
 ### 3. Train Model
+
+```bash
 python src/train.py
-
-
----
-
-Technologies Used
-
-Python
-
-Pandas
-
-Scikit-learn
-
-XGBoost
-
-NumPy
+```
