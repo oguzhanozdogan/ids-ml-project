@@ -85,11 +85,22 @@ def main():
 
     print(classification_report(y_test, y_pred, digits=4))
 
-    # Save model
+  # Save model and feature schema
+    feature_names = X_train.columns.tolist()
+
+    # Save training statistics for drift detection
+    train_stats = {
+        "mean": X_train.mean().to_dict(),
+        "std": X_train.std().to_dict()
+    }
+
     dump(model, MODEL_PATH)
+    dump(feature_names, "models/features.pkl")
+    dump(train_stats, "models/train_stats.pkl")
 
     print("\nModel saved to:", MODEL_PATH)
-
+    print("Features saved to: models/features.pkl")
+    print("Stats saved to: models/train_stats.pkl")
 
 if __name__ == "__main__":
     main()

@@ -7,3 +7,8 @@ seaborn
 joblib
 streamlit
 shap
+fastapi
+uvicorn
+scipy
+streamlit
+requests
